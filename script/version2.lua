@@ -118,6 +118,7 @@ function UnEquip()
             slot_idx = slot_idx + 1
             game:GetService("VirtualInputManager"):SendKeyEvent(true,  48 + slot_idx, false, game)
             game:GetService("VirtualInputManager"):SendKeyEvent(false, 48 + slot_idx, false, game)
+            wait(.5)
             print((not GetEquipped(game:GetService("Players").LocalPlayer) and "Successfully UnEquipped your item!") or "Failed to UnEquip your item!")
             return
         elseif not GetEquipped(game:GetService("Players").LocalPlayer) then
@@ -137,6 +138,7 @@ function Equip(item)
             if name == item then
                 game:GetService("VirtualInputManager"):SendKeyEvent(true,  48 + slot_idx, false, game)
                 game:GetService("VirtualInputManager"):SendKeyEvent(false, 48 + slot_idx, false, game)
+            	wait(.5)
             	print((GetEquipped(game:GetService("Players").LocalPlayer) and "Successfully Equipped your item!") or "Failed to Equip your item!")
             	return
             end
